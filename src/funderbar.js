@@ -218,24 +218,27 @@ _.falsyOrTruthy = function(a){
     //Below you will be building a function that creates an object using bracket notation ([]). Within the function create and return an object. 
 
     _.objectCreationBracket = (a,b,c) =>{
-      let obj = {
-        firstName: a,
-        lastName: b,
-        zord: c
-        }
+        let obj = {};
+        let lastName = 'lastName';
         
+        obj['firstName'] = a;
+        obj[lastName] = b;
+        obj['zord'] = c;
+
         return obj;
     }
 
     //Below you will be building a function that creates an object using dot notation (.). Within the function create and return an object. 
 
     _.objectCreationDot = (a,b,c) =>{
-      let obj = {
-        firstName: a.firstName,
-        lastName: b.lastName,
-        zord: c.zord
-      }
+    
+      let obj = {};
+        
+      obj.firstName = a;
+      obj.lastName = b;
+      obj.zord = c;
 
+      return obj;
     }
 
     _.objectValue = (a,b) => {
@@ -252,7 +255,18 @@ _.falsyOrTruthy = function(a){
     //Loop through the given array and return the total sum of all the numbers in the array. 
     _.forOf = (a) => {
       //Code Goes Below
+      var sum = 0;
+
       
+      for (let element of a){
+        
+        if(typeof element == "number" ){
+          sum += element;
+        } else {
+          continue;
+        }
+      }
+      return sum;
     }
 
     //Loop through the given object and return an array of keys from the object. 
